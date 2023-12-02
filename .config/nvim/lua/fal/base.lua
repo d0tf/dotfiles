@@ -1,5 +1,11 @@
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.opt.cursorline = false
+vim.opt.termguicolors = true
+vim.opt.wildoptions = "pum"
+vim.opt.pumblend = 5
+vim.opt.background = "dark"
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
@@ -10,7 +16,7 @@ vim.opt.expandtab = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.autoindent = true
@@ -32,4 +38,3 @@ vim.opt.wildignore:append { "*/node_modules/*" }
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
-

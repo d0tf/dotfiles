@@ -1,14 +1,9 @@
-local statusTS, treesitter_config = pcall(require, "nvim-treesitter.configs")
-if not statusTS then
-  return
+local ok, ts_config = pcall(require, "nvim-treesitter.configs")
+if not ok then
+  print("treesitter not installed! https://github.com/nvim-treesitter/nvim-treesitter")
 end
 
-local statusAT, autotag = pcall(require, "nvim-ts-autotag")
-if not statusAT then
-  return
-end
-
-treesitter_config.setup({
+ts_config.setup({
   ensure_installed = {
     "vimdoc",
     "javascript",
@@ -17,10 +12,9 @@ treesitter_config.setup({
     "lua",
     "go",
     "python",
-    "tsx",
+    "html",
     "css",
     "json",
-    "html",
     "markdown",
     "markdown_inline",
     "astro",
@@ -35,12 +29,5 @@ treesitter_config.setup({
   },
   autotag = {
     enable = true
-  }
-})
-
-autotag.setup({
-  disable_filetypes = {
-    "TelescopePrompt",
-    "vim",
   }
 })

@@ -1,6 +1,6 @@
 local status, lsp_zero = pcall(require, "lsp-zero")
 if not status then
-  return
+  print("lsp-zero not installed! https://github.com/VonHeikemen/lsp-zero.nvim")
 end
 
 lsp_zero.on_attach(function(_, bufnr)
@@ -19,49 +19,43 @@ lsp_zero.on_attach(function(_, bufnr)
   lsp_zero.buffer_autoformat()
 end)
 
-require('mason').setup({})
-require('mason-lspconfig').setup({
+require("mason").setup({})
+require("mason-lspconfig").setup({
   ensure_installed = {
-    'tsserver',
-    'rust_analyzer',
-    'lua_ls',
-    'astro',
-    'tailwindcss',
-    'jsonls',
-    'html',
-    'grammarly',
-    'gopls',
-    'bashls',
-    'cssls',
-    'custom_elements_ls',
-    'docker_compose_language_service',
-    'dockerls',
-    'golangci_lint_ls',
-    'templ',
+    "tsserver",
+    "rust_analyzer",
+    "lua_ls",
+    "astro",
+    "tailwindcss",
+    "jsonls",
+    "html",
+    "gopls",
+    "bashls",
+    "cssls",
   },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
+      require("lspconfig").lua_ls.setup(lua_opts)
     end,
   }
 })
 
-local cmp = require('cmp')
+local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
   sources = {
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lua' },
+    { name = "path" },
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-k>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+    ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+    ["<C-k>"] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
   }),
 })
