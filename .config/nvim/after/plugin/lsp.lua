@@ -32,6 +32,8 @@ require("mason-lspconfig").setup({
     "gopls",
     "bashls",
     "cssls",
+    "biome",
+    "htmx",
   },
   handlers = {
     lsp_zero.default_setup,
