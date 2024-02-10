@@ -46,11 +46,5 @@ vim.keymap.set("n", "<leader>rl", "<C-w>>")
 vim.keymap.set("n", "<leader>rk", "<C-w>-")
 vim.keymap.set("n", "<leader>rj", "<C-w>+")
 
--- undotree
-vim.keymap.set('n', '<leader>u', "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>")
-
--- trouble
-vim.keymap.set('n', '<leader>tt', "<cmd>TroubleToggle<CR>")
-
 -- hehe
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
