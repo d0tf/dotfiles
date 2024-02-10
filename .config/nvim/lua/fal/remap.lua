@@ -10,6 +10,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<leader>nl", vim.cmd.nohl)
 
 vim.keymap.set({ "v", "n" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
@@ -29,8 +30,10 @@ vim.keymap.set("n", "_", "<C-x>")
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { silent = true })
-vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { silent = true })
+vim.keymap.set("n", "<leader>nt", vim.cmd.tabnew)
+vim.keymap.set("n", "<leader>kt", vim.cmd.tabclose)
+vim.keymap.set("n", "<leader>tn", vim.cmd.tabnext)
+vim.keymap.set("n", "<leader>tp", vim.cmd.tabprevious)
 
 -- split
 vim.keymap.set("n", "<leader>sv", vim.cmd.vsplit)
@@ -47,7 +50,7 @@ vim.keymap.set("n", "<leader>rj", "<C-w>+")
 vim.keymap.set('n', '<leader>u', "<cmd>UndotreeToggle<CR><cmd>UndotreeFocus<CR>")
 
 -- trouble
-vim.keymap.set('n', '<leader>qf', "<cmd>TroubleToggle quickfix<CR>")
+vim.keymap.set('n', '<leader>tt', "<cmd>TroubleToggle<CR>")
 
 -- hehe
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
