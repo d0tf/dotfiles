@@ -1,12 +1,24 @@
 local wezterm = require 'wezterm'
 
+wezterm.mux.spawn_window = {
+  position = {
+    x = 0.5,
+    y = 0.5,
+  },
+}
+
 local config = {
   default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' },
   enable_tab_bar = false,
   enable_scroll_bar = true,
-  window_background_opacity = 0.95,
+  color_scheme = 'Moonfly (Gogh)',
+  window_close_confirmation = 'NeverPrompt',
+  window_background_opacity = 0.9,
   text_background_opacity = 0.35,
-  color_scheme = 'tokyonight_night',
+  font_size = 12.0,
+  initial_rows = 24,
+  initial_cols = 90,
+  font = wezterm.font("FiraMono Nerd Font"),
   keys = {
     {
       key = '+',
