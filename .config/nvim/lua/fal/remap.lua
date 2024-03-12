@@ -46,5 +46,6 @@ vim.keymap.set("n", "<leader>rl", "<C-w>>")
 vim.keymap.set("n", "<leader>rk", "<C-w>-")
 vim.keymap.set("n", "<leader>rj", "<C-w>+")
 
--- hehe
+-- plugins
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>he", "<cmd>CloakToggle<CR>")
