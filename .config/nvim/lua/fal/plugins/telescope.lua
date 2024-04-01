@@ -11,6 +11,7 @@ return {
           "node_modules",
           ".git",
           "build",
+          ".venv",
         }
       }
     })
