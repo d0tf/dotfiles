@@ -74,6 +74,11 @@ local config = {
       key = 'U',
       mods = 'ALT|SHIFT',
       action = wezterm.action.SpawnTab({ DomainName = "WSL:Ubuntu" })
+    },
+    {
+      key = 'N',
+      mods = 'ALT|SHIFT',
+      action = wezterm.action.SpawnTab({ DomainName = "local" })
     }
   }
 }
