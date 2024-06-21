@@ -37,7 +37,6 @@ return {
         "bashls",
         "cssls",
         "biome",
-        "htmx",
       },
       handlers = {
         function(server_name)
