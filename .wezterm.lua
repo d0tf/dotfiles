@@ -15,10 +15,15 @@ local config = {
   window_close_confirmation = 'NeverPrompt',
   window_background_opacity = 0.9,
   text_background_opacity = 0.35,
-  font_size = 12.0,
+  font_size = 13.0,
   initial_rows = 24,
-  initial_cols = 90,
-  font = wezterm.font("FiraMono Nerd Font"),
+  -- GohuFont 11 Nerd Font
+  font = wezterm.font("GohuFont 11 Nerd Font"),
+  initial_cols = 96,
+  -- keys = {
+  -- FiraMono Nerd Font
+  --  font = wezterm.font("FiraMono Nerd Font"),
+  --  initial_cols = 90,
   keys = {
     {
       key = '+',
