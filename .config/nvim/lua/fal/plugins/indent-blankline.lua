@@ -5,17 +5,22 @@ return {
     opts = {},
     config = function()
       local highlight = {
-        "CursorColumn",
-        "Whitespace",
+        "hl",
       }
-      require("ibl").setup {
-        indent = { highlight = highlight, char = "" },
-        whitespace = {
+
+      local hooks = require "ibl.hooks"
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        vim.api.nvim_set_hl(0, "hl", { fg = "#6c757d" })
+      end)
+
+      require("ibl").setup({
+        scope = {
           highlight = highlight,
-          remove_blankline_trail = false,
-        },
-        scope = { enabled = false },
-      }
+          char = "▏",
+          show_start = false,
+          show_end = false
+        }
+      })
     end
   }
 }
