@@ -1,16 +1,56 @@
 return {
   {
     "folke/trouble.nvim",
-    config = function ()
-      vim.keymap.set("n", "<leader>tt", function ()
-       require("trouble").toggle()
-      end)
-      vim.keymap.set("n", "<leader>[t", function ()
-       require("trouble").next({ skip_groups = true, jump = true })
-      end)
-      vim.keymap.set("n", "<leader>[t", function ()
-       require("trouble").previous({ skip_groups = true, jump = true })
-      end)
-    end
+    opts = {
+      modes = {
+        split_diag = {
+          mode = "diagnostics",
+          preview = {
+            type = "split",
+            relative = "win",
+            position = "right",
+            size = 0.4,
+          },
+        },
+      },
+    },
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>tt",
+        "<cmd>Trouble split_diag toggle focus=true<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+      {
+        "]t",
+        "<cmd>Trouble split_diag next auto_jump=true<cr>",
+        desc = "Jump to next Trouble",
+      },
+      {
+        "[t",
+        "<cmd>Trouble split_diag prev auto_jump=true<cr>",
+        desc = "Jump to prev Trouble",
+      },
+      {
+        "<leader>cs",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+      },
+      {
+        "<leader>cl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+      },
+      {
+        "<leader>xL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+      },
+      {
+        "<leader>xQ",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+      },
+    },
   }
 }
