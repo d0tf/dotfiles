@@ -8,3 +8,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ```sh
 choco install zoxide fzf
 ```
+## Apply as a default profile
+```sh
+curl https://raw.githubusercontent.com/d0tf/dotfiles/refs/heads/master/profile.ps1 -o $PROFILE
+```
