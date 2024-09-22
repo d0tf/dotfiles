@@ -17,13 +17,8 @@ local config = {
   text_background_opacity = 0.35,
   font_size = 13.0,
   initial_rows = 24,
-  -- GohuFont 11 Nerd Font
-  font = wezterm.font("GohuFont 11 Nerd Font"),
+  font = wezterm.font("JetBrainsMono Nerd Font"),
   initial_cols = 96,
-  -- keys = {
-  -- FiraMono Nerd Font
-  --  font = wezterm.font("FiraMono Nerd Font"),
-  --  initial_cols = 90,
   keys = {
     {
       key = '+',
