@@ -17,7 +17,7 @@ local config = {
   text_background_opacity = 0.35,
   font_size = 13.0,
   initial_rows = 24,
-  font = wezterm.font("JetBrainsMono Nerd Font"),
+  font = wezterm.font("JetBrainsMonoNL Nerd Font"),
   initial_cols = 96,
   keys = {
     {
